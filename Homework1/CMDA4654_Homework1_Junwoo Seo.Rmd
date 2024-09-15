@@ -80,18 +80,6 @@ knitr::opts_chunk$set(echo = TRUE,
 
 # Problem 1
 
-## Part a
+## Part (a): Calculate $P(Y_{1} \gt 1, 1 \gt Y_{1})$
 
-Example Chunk Below
-
-```{r}
-plot(cars)
-```
-
-
-```{r}
-summary(mtcars)
-```
-
-
-
+xfds
