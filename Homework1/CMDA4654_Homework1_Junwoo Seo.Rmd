@@ -1,8 +1,8 @@
 ---
-title: "CMDA-4654  \n Homework 1"
-subtitle: "Homework 1"
-author: "Junwoo Seo"
-date: "September 17, 2024"
+title: "CMDA-4654  \n Homework Template"
+subtitle: "Homework XX"
+author: "Your name here"
+date: "Today's Date"
 output:
   pdf_document:
     highlight: haddock
@@ -82,6 +82,7 @@ knitr::opts_chunk$set(echo = TRUE,
 
 ## Part a
 
+Example Chunk Below
 
 ```{r}
 plot(cars)
