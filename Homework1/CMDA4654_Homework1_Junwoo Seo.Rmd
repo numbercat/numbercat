@@ -1,8 +1,8 @@
 ---
-title: "CMDA-4654  \n Homework Template"
-subtitle: "Homework XX"
-author: "Your name here"
-date: "Today's Date"
+title: "CMDA-4654  \nHomework 01"
+subtitle: "Homework 01"
+author: "Junwoo Seo"
+date: "Sep 17, 2024"
 output:
   pdf_document:
     highlight: haddock
@@ -80,6 +80,9 @@ knitr::opts_chunk$set(echo = TRUE,
 
 # Problem 1
 
-## Part (a): Calculate $P(Y_{1} \gt 1, 1 \gt Y_{1})$
+## Part (a): Calculate $P(Y_{1} \gt 1, Y_{2} < 1)$
 
-xfds
+To calculate the $P(Y_{1} \gt 1, Y_{2} < 1)$, we need to use the integration of the joint density function.To specifiy, the integration would look like:
+\[
+
+\] 
