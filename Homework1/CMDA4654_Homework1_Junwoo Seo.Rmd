@@ -99,22 +99,27 @@ To calculate the $P(Y_{1} \gt 1, Y_{2} < 1)$, we need to use the integration of 
 
 Now, to calculate the above, write the r code as below:
 ```{r}
-f <- function(y1, y2) {
-  if (y1 > 0 && y2 > 0) {
-    return((1/8) * y1 * exp(-(y1 + y2) / 2))
+f_joint <- function(y1, y2) {
+  if (y1 > 0 & y2 > 0) {
+    return((1/8) * y1 * exp(-(y1 + y2)/2))
   } else {
     return(0)
   }
 }
 
-outer_integral <- function(y1) {
-  integrate(function(y2) f(y1, y2), lower = 0, upper = 1)$value
-}
+# Define the limits for the integral
+lower_y1 <- 1
+upper_y1 <- Inf
+lower_y2 <- 0
+upper_y2 <- 1
 
-result <- integrate(outer_integral, lower = 1, upper = Inf)
+# Calculate the double integral
+prob <- integrate(function(y1) {
+  sapply(y1, function(y1) {
+    integrate(function(y2) f_joint(y1, y2), lower_y2, upper_y2)$value
+  })
+}, lower_y1, upper_y1)
 
-cat("The probability P(Y1 > 1, Y2 < 1) is:", result$value, "\n")
-
-
+prob$value
 ```
 
