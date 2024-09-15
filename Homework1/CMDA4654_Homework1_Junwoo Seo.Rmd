@@ -82,7 +82,39 @@ knitr::opts_chunk$set(echo = TRUE,
 
 ## Part (a): Calculate $P(Y_{1} \gt 1, Y_{2} < 1)$
 
-To calculate the $P(Y_{1} \gt 1, Y_{2} < 1)$, we need to use the integration of the joint density function.To specifiy, the integration would look like:
-\[
+For the Joint Density Funtion for this question is: 
 
-\] 
+
+\[
+  f(y_1, y_2) =
+  \begin{cases} 
+  \frac{1}{8} y_1 e^{-\frac{(y_1 + y_2)}{2}}, & \text{if } y_1 > 0 \text{ and } y_2 > 0 \\
+  0, & \text{otherwise}
+  \end{cases}
+\]
+
+To calculate the $P(Y_{1} \gt 1, Y_{2} < 1)$, we need to use the integration of the joint density function.To specifiy, the integration would look like:
+
+- $\int_{0}^{1} \int_{1}^{\infty} f(x) \; dy_{1} dy_{2}$
+
+Now, to calculate the above, write the r code as below:
+```{r}
+f <- function(y1, y2) {
+  if (y1 > 0 && y2 > 0) {
+    return((1/8) * y1 * exp(-(y1 + y2) / 2))
+  } else {
+    return(0)
+  }
+}
+
+outer_integral <- function(y1) {
+  integrate(function(y2) f(y1, y2), lower = 0, upper = 1)$value
+}
+
+result <- integrate(outer_integral, lower = 1, upper = Inf)
+
+cat("The probability P(Y1 > 1, Y2 < 1) is:", result$value, "\n")
+
+
+```
+
