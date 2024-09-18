@@ -88,10 +88,3 @@ Example Chunk Below
 plot(cars)
 ```
 
-
-```{r}
-summary(mtcars)
-```
-
-
-
